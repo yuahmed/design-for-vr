@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Meditation Room</title>
+  <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
+</head>
+
+<!-- TODOs:
+ 1. find actual pictures
+ 2. colors?
+ 3. make room larger (expand walls) 
+ 4. center mat - figure out
+ 5. decor -->
+
+<body>
+  <a-scene>
+
+    <!-- 360-degree skybox with clouds outside the window -->
+    <!-- <a-sky src="./eberhard-grossgasteiger-J9NDmBVhN04-unsplash.jpg" material="repeat: 4 4"></a-sky> -->
+
+    <!-- bgm  -->
+    <a-sound src="./relaxing-piano-music-248868.mp3" autoplay="true" position="0 2 5"></a-sound>
+
+    <!-- Meditation Room Walls -->
+    <a-box position="0 0 -5" rotation="0 0 0" width="10" height="10" depth="0.1" color="#549c76"
+      src="./birmingham-museums-trust-8FNuCxFfbFw-unsplash.jpg" material="side: double;"></a-box>
+    <a-box position="-5 0 0" rotation="0 90 0" width="10" height="10" depth="0.1" color="#8C8C8C"
+      src="./joe-woods-4Zaq5xY5M_c-unsplash.jpg" material="side: double;"></a-box>
+    <a-box position="5 0 0" rotation="0 90 0" width="10" height="10" depth="0.1" color="#549c76"
+      src="./joe-woods-4Zaq5xY5M_c-unsplash.jpg" material="side: double;"></a-box>
+    <a-plane position="4.7 0 0" rotation="0 90 0" width="5" height="3"
+      src="./cosmic-timetraveler-pYyOZ8q7AII-unsplash.jpg"
+      material="side: double; transparent: true; opacity: 0.9"></a-plane>
+
+    <!-- Window Border (Top, Bottom, Left, Right) -->
+    <a-box position="4.7 1.55 0" rotation="0 90 0" width="5.2" height="0.1" depth="0.1" color="#000000"></a-box>
+    <a-box position="4.7 -1.55 0" rotation="0 90 0" width="5.2" height="0.1" depth="0.1" color="#000000"></a-box>
+    <a-box position="4.7 0 -2.5" rotation="0 90 0" width="0.1" height="3.1" depth="0.1" color="#000000"></a-box>
+    <a-box position="4.7 0 2.5" rotation="0 90 0" width="0.1" height="3.1" depth="0.1" color="#000000"></a-box>
+
+    <!-- Back Wall -->
+    <a-box position="0 0 5" rotation="0 0 0" width="10" height="10" depth="0.1" color="#549c76"
+      src="./joe-woods-4Zaq5xY5M_c-unsplash.jpg" material="side: double;"></a-box>
+
+    <!-- Floor and Ceiling -->
+    <a-box position="0 -3 0" rotation="0 0 0" width="10" height="0.1" depth="10" color="#4f3419"></a-box>
+    <a-box position="0 6 0" rotation="0 0 0" width="15" height="0.1" depth="15" color="#AFAFAF"
+      src="./joe-woods-4Zaq5xY5M_c-unsplash.jpg" material="side: double;"></a-box>
+
+    <!-- Calming Pictures on Left Wall -->
+    <a-plane position="-4.9 1.5 -2" rotation="0 90 0" width="3" height="2"
+      src="./alexis-antonio-EAH3N7R-Ngs-unsplash.jpg"></a-plane>
+    <a-plane position="-4.9 1.5 2" rotation="0 90 0" width="3" height="2"
+      src="./premium_photo-1670591909199-bb4c81e5951b.avif"></a-plane>
+
+    <!-- Center Object: Fountain or Plant -->
+    <a-entity geometry="primitive: cylinder; radius: 1; height: 0.5" position="0 -2.5 0"
+      material="color: #556B2F"></a-entity>
+    <!-- <a-entity geometry="primitive: sphere; radius: 0.2" position="0 -2 0" material="color: #32CD32"></a-entity> -->
+
+    <!-- Meditation Cushions -->
+    <a-torus-knot position="-2 -2.8 -2" radius="0.5" radius-tubular="0.1" material="color: #B5651D"></a-torus-knot>
+    <a-torus-knot position="2 -2.8 -2" radius="0.5" radius-tubular="0.1" material="color: #B5651D"></a-torus-knot>
+
+    <!-- Yoga Mat -->
+    <a-plane position="0 -2.9 3" rotation="-90 0 0" width="3" height="2" color="#FFDEAD" opacity="0.9"></a-plane>
+
+    <!-- Soft lighting -->
+    <a-light type="ambient" color="#FFE4B5" intensity="0.3"></a-light>
+    <a-light type="point" position="0 2 0" intensity="0.2" color="#FFDAB9"></a-light>
+
+    <!-- Candles for ambiance with soft glow -->
+    <a-box position="-3 -2.7 -3" width="0.2" height="0.5" depth="0.2" material="color: #FFA07A"></a-box>
+    <a-box position="3 -2.7 -3" width="0.2" height="0.5" depth="0.2" material="color: #FFA07A"></a-box>
+
+    <!-- Camera to look around -->
+    <a-camera wasd-controls-enabled="false" position="0 0 0"></a-camera>
+
+  </a-scene>
+</body>
+
+</html>
