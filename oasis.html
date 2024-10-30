@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
+</head>
+
+<body>
+  <a-scene>
+    <!-- Background to give desert effect -->
+    <a-sky color="#f4a460"></a-sky>
+
+    <!-- Ground of the oasis -->
+    <a-plane position="0 -2 -10" rotation="-90 0 0" width="100" height="100" color="#c2b280"></a-plane>
+
+    <!-- Pond with Water Ripple Effect -->
+    <a-circle id="pond" position="0 -1.9 -5" rotation="-90 0 0" radius="2" color="#00bfff"
+      material="opacity: 0.8; shader: flat">
+      <a-animation attribute="scale" from="1 1 1" to="1.1 1.1 1" dur="4000" direction="alternate" repeat="indefinite"
+        easing="ease-in-out"></a-animation>
+    </a-circle>
+
+    <!-- Palm Trees with Breeze Effect -->
+    <a-entity geometry="primitive: cylinder; height: 5; radius: 0.2" position="-3 -1.5 -6" material="color: #8b4513">
+      <a-entity geometry="primitive: cone; height: 3; radiusBottom: 2" position="0 3 0" material="color: #228b22">
+        <a-animation attribute="rotation" to="0 5 0" dur="3000" direction="alternate" repeat="indefinite"
+          easing="ease-in-out"></a-animation>
+      </a-entity>
+    </a-entity>
+
+    <a-entity geometry="primitive: cylinder; height: 4.5; radius: 0.2" position="2 -1.5 -4" material="color: #8b4513">
+      <a-entity geometry="primitive: cone; height: 2.5; radiusBottom: 1.8" position="0 2.5 0" material="color: #228b22">
+        <a-animation attribute="rotation" to="0 5 0" dur="3000" direction="alternate" repeat="indefinite"
+          easing="ease-in-out"></a-animation>
+      </a-entity>
+    </a-entity>
+
+    <a-entity geometry="primitive: cylinder; height: 6; radius: 0.2" position="4 -1.5 -8" material="color: #8b4513">
+      <a-entity geometry="primitive: cone; height: 3.5; radiusBottom: 2.2" position="0 3.5 0" material="color: #228b22">
+        <a-animation attribute="rotation" to="0 5 0" dur="3000" direction="alternate" repeat="indefinite"
+          easing="ease-in-out"></a-animation>
+      </a-entity>
+    </a-entity>
+
+    <!-- Cactuses -->
+    <a-entity geometry="primitive: cylinder; height: 2.5; radius: 0.3" position="-10 -1.5 -12"
+      material="color: #228b22"></a-entity>
+
+    <a-entity geometry="primitive: cylinder; height: 3; radius: 0.3" position="8 -1.5 -15"
+      material="color: #228b22"></a-entity>
+
+    <a-entity geometry="primitive: cylinder; height: 2.8; radius: 0.3" position="-8 -1.5 -10"
+      material="color: #228b22"></a-entity>
+
+    <!-- Sun -->
+    <a-entity geometry="primitive: sphere; radius: 5" position="-10 10 -20"
+      material="color: #ffdd33; emissive: #ffaa00; emissiveIntensity: 0.7"></a-entity>
+
+    <!-- Birds -->
+    <a-entity geometry="primitive: sphere; radius: 0.2" position="-6 8 -15" material="color: #000000"
+      animation="property: position; to: -4 9 -13; dur: 5000; loop: true; easing: easeInOutQuad; dir: alternate"></a-entity>
+
+    <a-entity geometry="primitive: sphere; radius: 0.2" position="5 7 -18" material="color: #000000"
+      animation="property: position; to: 7 8 -16; dur: 6000; loop: true; easing: easeInOutQuad; dir: alternate"></a-entity>
+
+    <!-- Lizards -->
+    <a-entity geometry="primitive: box; height: 0.1; width: 0.4; depth: 0.1" position="-5 -1.9 -7"
+      material="color: #654321"
+      animation="property: position; to: -3 -1.9 -6; dur: 8000; loop: true; easing: easeInOutQuad; dir: alternate"></a-entity>
+
+    <a-entity geometry="primitive: box; height: 0.1; width: 0.4; depth: 0.1" position="3 -1.9 -9"
+      material="color: #654321"
+      animation="property: position; to: 5 -1.9 -10; dur: 9000; loop: true; easing: easeInOutQuad; dir: alternate"></a-entity>
+
+    <!-- Breeze Effect -->
+    <a-animation attribute="rotation" to="0 360 0" dur="10000" repeat="indefinite"></a-animation>
+
+    <!-- Lighting -->
+    <a-light type="ambient" color="#ffffff" intensity="0.5"></a-light>
+    <a-light type="directional" position="-1 2 -1" intensity="0.8"></a-light>
+
+    <!-- Interactive Button to Switch to a New HTML File -->
+    <a-plane id="gaze-button" 
+             position="0 1.5 -3" 
+             rotation="0 0 0" 
+             width="1" height="0.5" 
+             color="#00BCD4" 
+             event-set__mouseenter="color: yellow"
+             event-set__mouseleave="color: #00BCD4">
+      <a-text value="Lobby" align="center" color="#FFFFFF" position="0 0 0.1"></a-text>
+    </a-plane>
+
+    <!-- Camera with Gaze Controls -->
+    <a-camera position="0 1.6 0" look-controls>
+      <a-cursor fuse="true" fuse-timeout="1500" material="color: black; shader: flat"></a-cursor>
+    </a-camera>
+  </a-scene>
+
+  <script>
+    const button = document.getElementById('gaze-button');
+
+    // Navigate to indexcopy.html when the button is clicked
+    button.addEventListener('click', () => {
+      window.location.href = 'lobby.html'; // Change to your new HTML file
+    });
+  </script>
+
+
+</body>
+
+</html>
