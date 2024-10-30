@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Outdoor Meditation Scene</title>
+  <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
+</head>
+
+<body>
+  <a-scene>
+
+    <!-- 360-Degree Nature Background -->
+    <a-sky src="image1.png" rotation="0 -90 0"></a-sky>
+
+    <!-- Soft Ambient Music -->
+    <a-sound src="./assets/audio/relaxing-piano-music-248868.mp3" autoplay="true" loop="true" position="0 1 0"></a-sound>
+
+    <!-- Interactive Button to Switch to a New HTML File -->
+    <a-plane id="gaze-button" 
+             position="0 1.5 -3" 
+             rotation="0 0 0" 
+             width="1" height="0.5" 
+             color="#00BCD4" 
+             event-set__mouseenter="color: yellow"
+             event-set__mouseleave="color: #00BCD4">
+      <a-text value="Lobby" align="center" color="#FFFFFF" position="0 0 0.1"></a-text>
+    </a-plane>
+
+    <!-- Meditation Object (Tree) -->
+    <a-cylinder id="tree" 
+                position="2 0 -4" 
+                radius="0.3" height="2" 
+                color="#8B4513">
+    </a-cylinder>
+    <a-sphere position="2 1.5 -4" radius="1" color="#228B22"></a-sphere>
+
+    <!-- Stones (Meditation Markers) -->
+    <a-sphere position="-1 0.2 -2" radius="0.2" color="#708090"></a-sphere>
+    <a-sphere position="0 0.2 -2" radius="0.2" color="#708090"></a-sphere>
+    <a-sphere position="1 0.2 -2" radius="0.2" color="#708090"></a-sphere>
+
+    <!-- Ambient Light for Outdoors -->
+    <a-light type="ambient" color="#ffffff" intensity="0.5"></a-light>
+    <a-light type="directional" color="#FFD700" intensity="0.8" position="1 2 0"></a-light>
+
+    <!-- Camera with Gaze Controls -->
+    <a-camera position="0 1.6 0" look-controls>
+      <a-cursor fuse="true" fuse-timeout="1500" material="color: black; shader: flat"></a-cursor>
+    </a-camera>
+
+  </a-scene>
+
+  <script>
+    const button = document.getElementById('gaze-button');
+
+    // Navigate to indexcopy.html when the button is clicked
+    button.addEventListener('click', () => {
+      window.location.href = 'lobby.html'; // Change to your new HTML file
+    });
+  </script>
+</body>
+
+</html>

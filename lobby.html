@@ -76,10 +76,60 @@
     <a-box position="-3 -2.7 -3" width="0.2" height="0.5" depth="0.2" material="color: #FFA07A"></a-box>
     <a-box position="3 -2.7 -3" width="0.2" height="0.5" depth="0.2" material="color: #FFA07A"></a-box>
 
+
+    <!-- Buttons Section -->
+    <a-plane id="button1" 
+             position="-3 2 -4" 
+             rotation="0 0 0" 
+             width="1.5" height="0.5" 
+             color="#00BCD4">
+      <a-text value="Forest" align="center" color="#FFFFFF" position="0 0 0.1"></a-text>
+    </a-plane>
+
+    <a-plane id="button2" 
+             position="0 2 -4" 
+             rotation="0 0 0" 
+             width="1.5" height="0.5" 
+             color="#4CAF50">
+      <a-text value="Oasis" align="center" color="#FFFFFF" position="0 0 0.1"></a-text>
+    </a-plane>
+
+    <a-plane id="button3" 
+             position="3 2 -4" 
+             rotation="0 0 0" 
+             width="1.5" height="0.5" 
+             color="#FF9800">
+      <a-text value="Yumna add here" align="center" color="#FFFFFF" position="0 0 0.1"></a-text>
+    </a-plane>
+
+
     <!-- Camera to look around -->
-    <a-camera wasd-controls-enabled="false" position="0 0 0"></a-camera>
+    <!-- Camera with Gaze Controls -->
+    <a-camera position="0 1.6 0" look-controls>
+      <a-cursor fuse="true" fuse-timeout="1500" material="color: black; shader: flat"></a-cursor>
+    </a-camera>
 
   </a-scene>
+  <script>
+    const button1 = document.getElementById('button1');
+    const button2 = document.getElementById('button2');
+    const button3 = document.getElementById('button3');
+
+    // Navigate to index.html
+    button1.addEventListener('click', () => {
+      window.location.href = 'forest.html';
+    });
+
+    // Navigate to indexcopy.html
+    button2.addEventListener('click', () => {
+      window.location.href = 'oasis.html';
+    });
+
+    // Placeholder for future feature
+    button3.addEventListener('click', () => {
+      alert('This feature is coming soon!');
+    });
+  </script>
 </body>
 
 </html>
