@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
+</head>
+
+<body>
+
+    <a-scene>
+        <a-assets>
+            <audio id="click-sound" src="https://cdn.aframe.io/360-image-gallery-boilerplate/audio/click.ogg"></audio>
+
+            <!-- Images. -->
+            <img id="mountain" src="./assets/img/mountain-360-view.jpg">
+
+        </a-assets>
+
+        <!-- 360-degree image. -->
+        <a-sky id="image-360" radius="10" src="#mountain"></a-sky>
+
+        <!-- Interactive Button to Switch to a New HTML File -->
+        <a-plane id="gaze-button" position="0 1.5 -3" rotation="0 0 0" width="1" height="0.5" color="#FF9800"
+            event-set__mouseenter="color: yellow" event-set__mouseleave="color: #00BCD4">
+            <a-text value="Lobby" align="center" color="#FFFFFF" position="0 0 0.1"></a-text>
+        </a-plane>
+
+        <!-- Camera with Gaze Controls -->
+        <a-camera position="0 1.6 0" look-controls>
+            <a-cursor fuse="true" fuse-timeout="1500" material="color: black; shader: flat"></a-cursor>
+        </a-camera>
+    </a-scene>
+
+    <script>
+        const button = document.getElementById('gaze-button');
+
+        // Navigate to indexcopy.html when the button is clicked
+        button.addEventListener('click', () => {
+            window.location.href = 'index.html'; // Change to your new HTML file
+        });
+    </script>
+
+
+</body>
+
+</html>
